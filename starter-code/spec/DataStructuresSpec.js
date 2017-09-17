@@ -9,11 +9,13 @@ describe("Stack", function() {
     it ("Should has an array to add the elements to the stack", function () {
       expect(Array.isArray(stack.stackControl)).toBe(true);
     });
+  });
+
 
     it ("Should has a max number of items to avoid the stack overflow", function () {
       expect(typeof(stack.MAX_SIZE)).toBe('number');
     });
-  });
+
 
   describe ("Stack methods", function () {
     it ("Should has a method to check if the current stack is empty", function () {
@@ -23,6 +25,8 @@ describe("Stack", function() {
     it ("Should has a method to check if we can push elements into the stack", function () {
       expect(typeof(stack.canPush)).toBe('function');
     });
+  });
+
 
     it ("Should has a method to push elements into the stack", function () {
       expect(typeof(stack.push)).toBe('function');
@@ -31,17 +35,18 @@ describe("Stack", function() {
     it ("Should has a method to take elements from the stack", function () {
       expect(typeof(stack.pop)).toBe('function');
     });
-  });
+
 
   describe ("Stack methods default values", function () {
     it ("Should has an empty stack", function () {
       expect(stack.isEmpty()).toBe(true);
     });
+  });
+
 
     it ("Should be able to add a new element in the stack", function () {
       expect(stack.canPush()).toBe(true);
     });
-  });
 
   describe ("Stack methods usage", function () {
     it ("Should add the indicated element to the stack", function () {
@@ -49,6 +54,7 @@ describe("Stack", function() {
 
       expect(stack.stackControl.length).toBe(1);
     });
+  });
 
     it ("Should return that stack is not empty when adding an element", function () {
       stack.push(19);
@@ -91,7 +97,6 @@ describe("Stack", function() {
     it ("Should return 'Stack Underflow' if there are no elements in the stack", function () {
       expect(stack.pop()).toBe('Stack Underflow');
     });
-  });
 });
 
 describe("Queues", function() {
@@ -180,7 +185,7 @@ describe("Queues", function() {
     it ("Should return the first element inserted in the queue", function () {
       queue.enqueue(19);
       queue.enqueue(88);
-
+      
       expect(queue.dequeue()).toBe(19);
     });
 
@@ -188,4 +193,5 @@ describe("Queues", function() {
       expect(queue.dequeue()).toBe('Queue Underflow');
     });
   });
+
 });
